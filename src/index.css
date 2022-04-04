@@ -1,13 +1,285 @@
+
+*{
+  color: white;
+  font-size: 17px;
+}
+main{
+  min-height: 100vh;
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  height: 100%;
+ 
+
+}
+
+
 body {
+  
   margin: 0;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s ease-out;
+
+}
+
+.night{
+  background-image: url('./bgimages/night-bg.png');
+
+}
+.day{
+  
+  background-image: url('./bgimages/summer-day-bg.jpg');
+  
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.UpcomingDay{
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+ 
+  display: inline-block;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5%;
+  background-color: rgba(39, 164, 196, 0.8);
+  
+
+}
+#root{
+ 
+  text-align: center;
+  height: 100%;
+}
+
+.container{
+  
+  display: inline-block;
+  width: 500px;
+  margin: 20px;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background-color: yellow;
+  border-radius: 50%;
+  cursor: pointer;
+ 
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background-color: yellow;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sliderBorder{
+  position: relative;
+  display: inline-block;
+  height: 39px;
+  top:15px
+  
+}
+.sliderBorderM{
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  top:15px
+  
+}
+
+.CurrentDay{
+  /* height: 325px; */
+  padding-bottom: 27px;
+  border-radius: 5%;
+  background-color: rgba(255,255,255,0.2);
+  /* box-shadow: 3px 6px rgba(0,0,0,0.2); */
+  
+}
+
+.city{
+  font-size: 35px;
+  font-weight: 600;
+  text-shadow: 1.5px 2.5px rgba(50,50,70,0.5);
+}
+
+.temp{
+  font-size: 25px;
+  font-weight: 400;
+ 
+}
+
+.UpcommingDaysContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.loTemp{
+  color: rgba(255,255,255,0.5);
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fromLeft{
+    
+    
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+     
+}
+.fromBottom{
+    
+    
+  animation: 0.5s ease-out 0s 1 slideInFromBottom;
+   
+}
+.fromRight{
+    
+    
+  animation: 0.5s ease-out 0s 1 slideInFromRight;
+   
+}
+
+.fromTop{
+    
+    
+  animation: 0.5s ease-out 0s 1 slideInFromTop;
+   
+}
+
+@media (max-width: 540px) {
+  *{
+    font-size: 16px;
+  }
+  
+  .container{
+  
+    display: inline-block;
+    width: 320px;
+    margin: 20px;
+  }
+  .CurrentDay{
+    width: 320px;
+    
+  }
+  .UpcommingDaysContainer{
+
+    width: 320px;
+    flex-shrink: 0;
+    flex-flow: row wrap;
+    /* justify-content: flex-end; */
+    /* align-items: flex-end; */
+    justify-content: space-around;
+    
+  }
+  .UpcommingDaySpan{
+    font-size: 14px;
+    
+    
+    
+    
+  }
+  .UpcomingDay{
+    width: 65px;
+    border-radius: 5px;
+  }
+  .UpcommingDayIcon{
+    width: 100%;
+  }
+
+  .sliderBorder{
+    position: relative;
+    display: inline-block;
+    height: 37px;
+    top:-20px;
+    right: 30px;
+
+    
+  }
+  .sliderBorderM{
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    top:-13px;
+    left: 29px;
+    
+  }
+  .slider{
+    width: 70%;
+  }
+}
+
+.credits{
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.5);
+  text-align: right;
 }
