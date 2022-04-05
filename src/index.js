@@ -81,7 +81,7 @@ class CurrentDay extends React.Component {
     return (
       <div>
       <div className='CurrentDay fromTop'>
-        <span className='city'>Sarajevo</span>
+        <span className='city'>SSarajevo</span>
         <br />
         <span className='temp'>{(this.state.displayCurrentWeather) ? Math.round(this.props.parameters.current.temp) : Math.round(this.props.parameters.hourly[this.state.hours - this.state.crthours].temp)}°C</span>
         <br />
